@@ -1,0 +1,16 @@
+[
+{
+  "modid": "confighealth",
+  "name": "Configurable Health",
+  "description": "Adjust Player and Mob Health Via Config File",
+  "version": "$version",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["kandivia"],
+  "credits": "MC Forge",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
