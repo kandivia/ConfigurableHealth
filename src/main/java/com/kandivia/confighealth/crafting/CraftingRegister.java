@@ -2,8 +2,8 @@ package com.kandivia.confighealth.crafting;
 
 import com.kandivia.confighealth.items.RegisterItems;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CraftingRegister {
 	private static ItemStack heartFrag = new ItemStack(RegisterItems.heart_fragment);

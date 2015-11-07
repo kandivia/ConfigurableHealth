@@ -7,7 +7,7 @@ public class Reference {
 	public static final String CLIENT_PROXY_CLASS = "com.kandivia.confighealth.proxy.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "com.kandivia.confighealth.proxy.CommonProxy";
 	
-	//Config
+	//Config Category
 	public static final String CATEGORY_PLAYER = "Player Config";
 	public static final String CATEGORY_PASSIVEMOB = "Passive Mob Config";
 	public static final String CATEGORY_NEUTRALMOB = "Neutral Mob Config";
@@ -30,6 +30,7 @@ public class Reference {
 		cowMaxHealth, cowStartHealth,
 		mooshroomMaxHealth, mooshroomStartHealth,
 		pigMaxHealth, pigStartHealth,
+		rabbitMaxHealth, rabbitStartHealth,
 		sheepMaxHealth, sheepStartHealth,
 		squidMaxHealth, squidStartHealth,
 		villagerMaxHealth, villagerStartHealth;
@@ -45,7 +46,11 @@ public class Reference {
 	public static int 
 		blazeMaxHealth, blazeStartHealth,
 		creeperMaxHealth, creeperStartHealth,
+		elderGuardianMaxHealth, elderGuardianStartHealth,
+		endermiteMaxHealth, endermiteStartHealth,
 		ghastMaxHealth, ghastStartHealth,
+		guardianMaxHealth, guardianStartHealth,
+		killerBunnyMaxHealth, killerBunnyStartHealth,
 		bigMagmaCubeMaxHealth, bigMagmaCubeStartHealth,
 		smallMagmaCubeMaxHealth, smallMagmaCubeStartHealth,
 		tinyMagmaCubeMaxHealth, tinyMagmaCubeStartHealth,

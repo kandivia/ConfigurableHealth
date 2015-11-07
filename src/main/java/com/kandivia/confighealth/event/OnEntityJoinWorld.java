@@ -2,7 +2,6 @@ package com.kandivia.confighealth.event;
 
 import com.kandivia.confighealth.main.Reference;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.boss.EntityDragon;
@@ -12,7 +11,9 @@ import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityEndermite;
 import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityGuardian;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.entity.monster.EntityPigZombie;
@@ -29,6 +30,7 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.passive.EntityVillager;
@@ -36,6 +38,7 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class OnEntityJoinWorld {
 	@SubscribeEvent
@@ -110,6 +113,16 @@ public class OnEntityJoinWorld {
 						 entityData.setBoolean("hasHealthSet", true);
 					 }
 					 
+					 else if(entity instanceof EntityGuardian){
+						 if(((EntityGuardian) entity).isElder()){
+							 setEntityHealth(entity, Reference.elderGuardianMaxHealth, Reference.elderGuardianStartHealth);
+							 entityData.setBoolean("hasHealthSet", true);
+						 } else{
+							 setEntityHealth(entity, Reference.guardianMaxHealth, Reference.guardianStartHealth);
+							 entityData.setBoolean("hasHealthSet", true);
+						 }
+					 }
+					 
 					 else if(entity instanceof EntityMagmaCube){
 						 if(((EntityMagmaCube) entity).getSlimeSize() == 1){
 							 setEntityHealth(entity, Reference.tinyMagmaCubeMaxHealth, Reference.tinyMagmaCubeStartHealth);
@@ -138,6 +151,16 @@ public class OnEntityJoinWorld {
 						 entityData.setBoolean("hasHealthSet", true);
 					 }
 					 
+					 else if(entity instanceof EntityRabbit){
+						 if(((EntityRabbit) entity).getRabbitType() == 99){
+							 setEntityHealth(entity, Reference.killerBunnyMaxHealth, Reference.killerBunnyStartHealth);
+							 entityData.setBoolean("hasHealthSet", true);
+						 } else{
+							 setEntityHealth(entity, Reference.rabbitMaxHealth, Reference.rabbitStartHealth);
+							 entityData.setBoolean("hasHealthSet", true);
+						 }
+					 }
+					 
 					 else if(entity instanceof EntitySheep){
 						 setEntityHealth(entity, Reference.sheepMaxHealth, Reference.sheepStartHealth);
 						 entityData.setBoolean("hasHealthSet", true);
@@ -160,6 +183,11 @@ public class OnEntityJoinWorld {
 					 
 					 else if(entity instanceof EntitySilverfish){
 						 setEntityHealth(entity, Reference.silverfishMaxHealth, Reference.silverfishStartHealth);
+						 entityData.setBoolean("hasHealthSet", true);
+					 }
+					 
+					 else if(entity instanceof EntityEndermite){
+						 setEntityHealth(entity, Reference.endermiteMaxHealth, Reference.endermiteStartHealth);
 						 entityData.setBoolean("hasHealthSet", true);
 					 }
 					 

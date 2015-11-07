@@ -2,16 +2,19 @@ package com.kandivia.confighealth.main;
 
 import com.kandivia.confighealth.config.ConfigHandler;
 import com.kandivia.confighealth.crafting.CraftingRegister;
-import com.kandivia.confighealth.event.OnEntityJoinWorld;
 import com.kandivia.confighealth.event.OnMobDrop;
+import com.kandivia.confighealth.event.OnEntityJoinWorld;
 import com.kandivia.confighealth.items.RegisterItems;
 import com.kandivia.confighealth.proxy.CommonProxy;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class MainRegistry{
@@ -27,5 +30,10 @@ public class MainRegistry{
 		MinecraftForge.EVENT_BUS.register(new OnEntityJoinWorld());
 		if(Reference.enableHeartDrops)
 			MinecraftForge.EVENT_BUS.register(new OnMobDrop());
-	}	
+	}
+	
+	@EventHandler
+	public void init(FMLInitializationEvent Event){
+		proxy.registerRenders();
+	}
 }

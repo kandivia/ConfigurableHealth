@@ -31,6 +31,8 @@ public class ConfigHandler {
 			Reference.mooshroomStartHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"mooshroomStartHealth", 10).getInt(10);
 			Reference.pigMaxHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"pigMaxHealth", 10).getInt(10);
 			Reference.pigStartHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"pigStartHealth", 10).getInt(10);
+			Reference.rabbitMaxHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"rabbitMaxHealth", 10).getInt(10);
+			Reference.rabbitStartHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"rabbitStartHealth", 10).getInt(10);
 			Reference.sheepMaxHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"sheepMaxHealth", 8).getInt(8);
 			Reference.sheepStartHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"sheepStartHealth", 8).getInt(8);
 			Reference.squidMaxHealth = config.get(Reference.CATEGORY_PASSIVEMOB,"squidMaxHealth", 10).getInt(10);
@@ -53,8 +55,14 @@ public class ConfigHandler {
 			Reference.blazeStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "blazeStartHealth", 20).getInt(20);
 			Reference.creeperMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "creeperMaxHealth", 20).getInt(20);
 			Reference.creeperStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "creeperStartHealth", 20).getInt(20);
+			Reference.elderGuardianMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "elderGuardianMaxHealth", 80).getInt(80);
+			Reference.elderGuardianStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "elderGuardianStartHealth", 80).getInt(80);
+			Reference.endermiteMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "endermiteMaxHealth", 8).getInt(8);
+			Reference.endermiteStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "endermiteStartHealth", 8).getInt(8);
 			Reference.ghastMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "ghastMaxHealth", 10).getInt(10);
 			Reference.ghastStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "ghastStartHealth", 10).getInt(10);
+			Reference.guardianMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "guardianMaxHealth", 30).getInt(30);
+			Reference.guardianStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "guardianStartHealth", 30).getInt(30);
 			Reference.bigMagmaCubeMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "bigMagmaCubeMaxHealth", 16).getInt(16);
 			Reference.bigMagmaCubeStartHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "bigMagmaCubeStartHealth", 16).getInt(16);
 			Reference.smallMagmaCubeMaxHealth = config.get(Reference.CATEGORY_HOSTILEMOB, "smallMagmaCubeMaxHealth", 4).getInt(4);

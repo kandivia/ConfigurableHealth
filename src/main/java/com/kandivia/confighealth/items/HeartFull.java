@@ -5,6 +5,9 @@ import com.kandivia.confighealth.main.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -13,7 +16,6 @@ public class HeartFull extends ItemFood {
 	public HeartFull(){
 		super(0, 0, false);
 		this.setUnlocalizedName("heart_full");
-		this.setTextureName(Reference.MOD_ID + ":" + getUnlocalizedName().substring(5));
 		this.setCreativeTab(CreativeTabs.tabMisc);
 	}
 	
@@ -23,10 +25,11 @@ public class HeartFull extends ItemFood {
         {
             playerIn.setItemInUse(itemStackIn, this.getMaxItemUseDuration(itemStackIn));
         }
+
         return itemStackIn;
     }
 	
-	public ItemStack onEaten(ItemStack stack, World worldIn, EntityPlayer playerIn)
+	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
     {
         if(playerIn.getMaxHealth() == (Reference.playerTopMaxHealth - 1))
         	playerIn.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(playerIn.getMaxHealth() + 1);

@@ -7,7 +7,7 @@ import com.kandivia.confighealth.main.Reference;
 
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class OnMobDrop {
 	Random rand = new Random();
